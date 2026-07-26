@@ -1,52 +1,468 @@
-Page 1
-────────────────────────
-Hi Priyanka
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Priyanka ❤️</title>
 
-There's something
-I've wanted to tell you...
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Segoe UI',sans-serif;
+}
 
-[ Begin ]
-────────────────────────
+body{
+background:#080808;
+overflow-x:hidden;
+color:white;
+}
 
-↓
+section{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:25px;
+position:relative;
+overflow:hidden;
+}
 
-Page 2
-────────────────────────
-Every conversation with you
-made my day a little brighter...
+h1{
+font-size:55px;
+margin-bottom:20px;
+}
 
-(beautiful animations)
+h2{
+font-size:40px;
+margin-bottom:20px;
+}
 
-[ Continue ]
-────────────────────────
+p{
+font-size:22px;
+line-height:1.8;
+max-width:800px;
+}
 
-↓
+button{
+padding:15px 40px;
+margin-top:40px;
+font-size:22px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+transition:.3s;
+}
 
-Page 3
-────────────────────────
-One Last Question...
+.next{
+background:#ff2d55;
+color:white;
+}
 
-Will you be
-my girlfriend?
+.next:hover{
+transform:scale(1.08);
+}
 
-❤️ YES
+#page1{
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+}
 
-💔 NO (moves away)
-────────────────────────
+#page2{
+background:linear-gradient(135deg,#1d1d1d,#111,#222);
+}
 
-↓
+#page3{
+background:linear-gradient(135deg,#150014,#250029,#120012);
+}
 
-Page 4
-────────────────────────
-🥹❤️
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:25px;
+box-shadow:0 0 25px rgba(255,255,255,.08);
+}
 
-You just made me
-the happiest person alive.
+#typing{
+min-height:160px;
+}
 
-Thank you.
+.heart{
+position:absolute;
+font-size:20px;
+color:#ff4f7d;
+animation:float 8s linear infinite;
+opacity:.7;
+}
 
-Love,
-Your Name
+@keyframes float{
 
-(Confetti)
-────────────────────────
+0%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+#yes{
+background:#2ecc71;
+color:white;
+margin-right:20px;
+}
+
+#yes:hover{
+transform:scale(1.1);
+}
+
+#no{
+background:#ff3b5c;
+color:white;
+position:absolute;
+}
+
+#result{
+display:none;
+margin-top:40px;
+font-size:32px;
+line-height:1.8;
+animation:fade 1.5s;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+canvas{
+position:fixed;
+left:0;
+top:0;
+pointer-events:none;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+
+from{
+opacity:.2;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<section id="page1">
+
+<div class="glass">
+
+<h1>Hi Priyanka ❤️</h1>
+
+<h2>There's Something I Want To Tell You...</h2>
+
+<p>
+Some people enter our lives unexpectedly...
+and somehow become the most beautiful part of our day.
+</p>
+
+<button class="next"
+onclick="document.getElementById('page2').scrollIntoView()">
+Begin ❤️
+</button>
+
+</div>
+
+</section>
+
+<section id="page2">
+
+<div class="glass">
+
+<h2>Dear Priyanka 🌸</h2>
+
+<p id="typing"></p>
+
+<button class="next"
+onclick="document.getElementById('page3').scrollIntoView()">
+Continue ➜
+</button>
+
+</div>
+
+</section>
+
+<section id="page3">
+
+<div class="glass">
+
+<h2>One Last Question... ❤️</h2>
+
+<p style="font-size:30px;margin-top:20px;">
+Will you be my girlfriend?
+</p>
+
+<div style="margin-top:50px;">
+
+<button id="yes">
+YES ❤️
+</button>
+
+<button id="no">
+NO 💔
+</button>
+
+</div>
+
+<div id="result">
+
+<h2>🥹❤️</h2>
+
+<p>
+
+You just made me the happiest person alive.
+
+<br><br>
+
+Thank you for giving us a chance.
+
+<br><br>
+
+No matter where life takes us,
+
+I promise to always respect you,
+
+support you,
+
+and make countless beautiful memories together.
+
+<br><br>
+
+❤️
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const message=
+
+`I've wanted to tell you this for quite a while...
+
+Every conversation with you makes my day brighter.
+
+Your smile, your kindness and the way you are...
+
+mean more to me than words can explain.
+
+So today I just want to ask one simple question... ❤️`;
+
+let i=0;
+
+function type(){
+
+if(i<message.length){
+
+document.getElementById("typing").innerHTML+=
+message.charAt(i)=="\n"?"<br>":message.charAt(i);
+
+i++;
+
+setTimeout(type,40);
+
+}
+
+}
+
+type();
+
+for(let i=0;i<35;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=(5+Math.random()*5)+"s";
+
+h.style.animationDelay=Math.random()*5+"s";
+
+h.style.fontSize=(15+Math.random()*20)+"px";
+
+document.body.appendChild(h);
+
+}
+
+for(let i=0;i<80;i++){
+
+let s=document.createElement("div");
+
+s.className="star";
+
+s.style.left=Math.random()*100+"vw";
+
+s.style.top=Math.random()*100+"vh";
+
+s.style.animationDelay=Math.random()*2+"s";
+
+document.body.appendChild(s);
+
+}
+
+const no=document.getElementById("no");
+
+function move(){
+
+const x=Math.random()*(window.innerWidth-150);
+
+const y=Math.random()*(window.innerHeight-80);
+
+no.style.left=x+"px";
+
+no.style.top=y+"px";
+
+}
+
+no.addEventListener("mouseover",move);
+
+no.addEventListener("click",move);
+
+const canvas=document.getElementById("canvas");
+
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;function confetti(){
+
+let pieces=[];
+
+for(let i=0;i<220;i++){
+
+pieces.push({
+
+x:window.innerWidth/2,
+
+y:window.innerHeight/2,
+
+dx:(Math.random()-0.5)*12,
+
+dy:(Math.random()-0.5)*12,
+
+size:Math.random()*6+3,
+
+color:`hsl(${Math.random()*360},100%,60%)`
+
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+pieces.forEach(p=>{
+
+ctx.fillStyle=p.color;
+
+ctx.fillRect(p.x,p.y,p.size,p.size);
+
+p.x+=p.dx;
+
+p.y+=p.dy;
+
+p.dy+=0.08;
+
+});
+
+if(pieces.some(p=>p.y<window.innerHeight+50)){
+
+requestAnimationFrame(animate);
+
+}
+
+}
+
+animate();
+
+}
+
+document.getElementById("yes").onclick=function(){
+
+document.querySelector("#page3 h2").style.display="none";
+
+document.querySelector("#page3 p").style.display="none";
+
+document.getElementById("yes").style.display="none";
+
+document.getElementById("no").style.display="none";
+
+document.getElementById("result").style.display="block";
+
+confetti();
+
+}
+
+window.onresize=function(){
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+}
+
+</script>
+
+</body>
+
+</html>
