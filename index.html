@@ -1,156 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>One Sweet Question 🍦</title>
 
-<style>
+<title>Happy Friendship Day</title>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
+<link rel="stylesheet" href="style.css">
 
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ffecd2,#fcb69f);
-overflow:hidden;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-.card{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
-text-align:center;
-width:90%;
-max-width:600px;
-}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-h1{
-font-size:35px;
-margin-bottom:20px;
-color:#ff6b6b;
-}
-
-p{
-font-size:24px;
-margin-bottom:40px;
-color:#444;
-line-height:1.6;
-}
-
-button{
-padding:15px 35px;
-font-size:20px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-transition:.2s;
-}
-
-#yes{
-background:#4CAF50;
-color:white;
-margin-right:20px;
-}
-
-#yes:hover{
-transform:scale(1.08);
-}
-
-#no{
-background:#ff4d4d;
-color:white;
-position:absolute;
-}
-
-#message{
-display:none;
-margin-top:30px;
-font-size:28px;
-color:#e91e63;
-font-weight:bold;
-animation:fade 1s;
-}
-
-@keyframes fade{
-
-from{
-opacity:0;
-transform:translateY(20px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="card">
+<!-- Loading Screen -->
 
-<h1>🍦 One Sweet Question 🍦</h1>
+<div id="loader">
 
-<p>
-If I offer you an ice cream when we meet...<br><br>
-Would you have it? 😊
+<div class="flower">
+
+🌻
+
+</div>
+
+<h2>Preparing something special...</h2>
+
+<div class="loading-bar">
+
+<div class="progress"></div>
+
+</div>
+
+</div>
+
+<!-- Main -->
+
+<div id="main">
+
+<!-- Background -->
+
+<div class="aurora"></div>
+
+<div class="stars"></div>
+
+<div class="particles"></div>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<h3 id="greeting"></h3>
+
+<h1 id="typing"></h1>
+
+<p class="subtitle">
+
+Some friendships don't need grand words...
+
+they simply become a beautiful part of our story.
+
 </p>
 
-<button id="yes">Yes 😄</button>
-<button id="no">No 🙈</button>
+<button id="beginBtn">
 
-<div id="message">
-🍨 Yay! Ice cream date it is! 😄✨
+Begin →
+
+</button>
+
+</section>
+
+<!-- Name Popup -->
+
+<div id="popup">
+
+<div class="popup-card">
+
+<h2>Welcome 🌻</h2>
+
+<p>
+
+Before we begin...
+
+May I know your name?
+
+</p>
+
+<input
+
+type="text"
+
+id="username"
+
+placeholder="Enter your name">
+
+<button id="enter">
+
+Continue</button>
+
 </div>
 
 </div>
 
-<script>
+</div>
 
-const no=document.getElementById("no");
-
-function moveButton(){
-
-const padding=20;
-
-const x=Math.random()*(window.innerWidth-120-padding);
-
-const y=Math.random()*(window.innerHeight-60-padding);
-
-no.style.left=x+"px";
-no.style.top=y+"px";
-
-}
-
-no.addEventListener("mouseenter",moveButton);
-no.addEventListener("click",moveButton);
-
-document.getElementById("yes").onclick=function(){
-
-document.getElementById("yes").style.display="none";
-document.getElementById("no").style.display="none";
-document.querySelector("p").style.display="none";
-document.querySelector("h1").innerHTML="🎉 Awesome! 🎉";
-document.getElementById("message").style.display="block";
-
-}
-
-moveButton();
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
