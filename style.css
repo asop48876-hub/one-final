@@ -1,1 +1,1327 @@
+/* ==========================================
+   GOOGLE FONT RESET
+========================================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top left,#6f5cff55,transparent 45%),
+
+    radial-gradient(circle at bottom right,#00d4ff33,transparent 40%),
+
+    radial-gradient(circle at center,#ff8fd833,transparent 50%),
+
+    #050816;
+
+    z-index:-3;
+
+}
+
+/* ==========================================
+   AURORA
+========================================== */
+
+.aurora{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(120deg,
+
+    rgba(99,102,241,.15),
+
+    rgba(0,255,255,.08),
+
+    rgba(255,0,150,.08),
+
+    rgba(255,255,255,.03));
+
+    filter:blur(90px);
+
+    animation:auroraMove 18s ease-in-out infinite alternate;
+
+    z-index:-2;
+
+}
+
+@keyframes auroraMove{
+
+0%{
+
+transform:translate(-10%,-5%) scale(1);
+
+}
+
+50%{
+
+transform:translate(8%,5%) scale(1.2);
+
+}
+
+100%{
+
+transform:translate(-5%,10%) scale(1);
+
+}
+
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+    background-image:
+
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.25;
+
+}
+
+/* ==========================================
+   PARTICLES
+========================================== */
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.particles::before{
+
+content:"";
+
+position:absolute;
+
+width:220%;
+
+height:220%;
+
+left:-60%;
+
+top:-60%;
+
+background:
+
+radial-gradient(circle,#ffffff66 1px,transparent 1px);
+
+background-size:60px 60px;
+
+animation:particlesMove 80s linear infinite;
+
+opacity:.25;
+
+}
+
+@keyframes particlesMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-800px);
+
+}
+
+}
+
+/* ==========================================
+   LOADER
+========================================== */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:#050816;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:9999;
+
+transition:.8s;
+
+}
+
+.flower{
+
+font-size:70px;
+
+animation:bounce 2s infinite;
+
+}
+
+#loader h2{
+
+margin-top:20px;
+
+font-weight:500;
+
+font-size:24px;
+
+letter-spacing:1px;
+
+}
+
+.loading{
+
+margin-top:30px;
+
+width:280px;
+
+height:8px;
+
+background:#222;
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+.loading-fill{
+
+height:100%;
+
+width:0;
+
+background:linear-gradient(90deg,#ffd54f,#ff7eb3,#6c63ff);
+
+animation:loading 3s forwards;
+
+}
+
+@keyframes loading{
+
+100%{
+
+width:100%;
+
+}
+
+}
+
+@keyframes bounce{
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+/* ==========================================
+   POPUP
+========================================== */
+
+#popup{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.65);
+
+backdrop-filter:blur(15px);
+
+z-index:999;
+
+}
+
+.popup-card{
+
+width:420px;
+
+max-width:90%;
+
+padding:40px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(20px);
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+
+}
+
+.popup-card h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:38px;
+
+margin-bottom:15px;
+
+}
+
+.popup-card p{
+
+line-height:1.8;
+
+color:#ddd;
+
+margin-bottom:25px;
+
+}
+
+.popup-card input{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+outline:none;
+
+border-radius:14px;
+
+font-size:16px;
+
+margin-bottom:20px;
+
+background:rgba(255,255,255,.12);
+
+color:white;
+
+}
+
+.popup-card input::placeholder{
+
+color:#cccccc;
+
+}
+
+.popup-card button{
+
+padding:14px 35px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#6c63ff,#ff7eb3);
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.popup-card button:hover{
+
+transform:translateY(-3px) scale(1.05);
+
+box-shadow:0 15px 35px rgba(108,99,255,.4);
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:50px;
+
+text-align:center;
+
+}
+
+.hero-content{
+
+max-width:850px;
+
+background:rgba(255,255,255,.07);
+
+padding:60px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.hero h3{
+
+font-size:28px;
+
+color:#ffd86b;
+
+margin-bottom:20px;
+
+}
+
+.hero h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:68px;
+
+line-height:1.2;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#dddddd;
+
+margin-bottom:40px;
+
+}
+
+.hero button{
+
+padding:18px 45px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#6c63ff,#ff7eb3);
+
+color:white;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.hero button:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 20px 40px rgba(108,99,255,.45);
+
+}/* ==========================================
+   GENERAL SECTIONS
+========================================== */
+
+.section{
+
+    min-height:70vh;
+
+    padding:80px 8%;
+
+    text-align:center;
+
+}
+
+.section h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:48px;
+
+    margin-bottom:50px;
+
+    color:#ffd86b;
+
+}
+
+
+/* ==========================================
+   APPRECIATION CARDS
+========================================== */
+
+.cards{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.card{
+
+    width:300px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    transition:.5s;
+
+}
+
+
+.card span{
+
+    font-size:45px;
+
+}
+
+
+.card h3{
+
+    margin:20px 0;
+
+    font-size:28px;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+
+.card p{
+
+    color:#ddd;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-15px);
+
+    background:rgba(255,255,255,.14);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+
+/* ==========================================
+   STAR WISH SECTION
+========================================== */
+
+
+.wish-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:35px;
+
+    margin:50px auto;
+
+}
+
+
+.wish{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:35px;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    transition:.4s;
+
+    animation:floatStar 3s infinite ease-in-out;
+
+}
+
+
+.wish:nth-child(even){
+
+    animation-delay:1s;
+
+}
+
+
+@keyframes floatStar{
+
+0%,100%{
+
+    transform:translateY(0);
+
+}
+
+50%{
+
+    transform:translateY(-15px);
+
+}
+
+}
+
+
+.wish:hover{
+
+    transform:scale(1.25);
+
+    box-shadow:0 0 30px #ffd86b;
+
+}
+
+
+#wishText{
+
+    min-height:50px;
+
+    font-size:22px;
+
+    color:#fff;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+
+/* ==========================================
+   FINAL BUTTON SECTION
+========================================== */
+
+
+.final-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.final-section p{
+
+    color:#ddd;
+
+    font-size:20px;
+
+    margin-bottom:35px;
+
+}
+
+
+#openLetter{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(135deg,#ff7eb3,#6c63ff);
+
+    transition:.4s;
+
+}
+
+
+#openLetter:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 20px 40px rgba(255,126,179,.4);
+
+}
+
+
+/* ==========================================
+   ENVELOPE AREA
+========================================== */
+
+
+#envelopeSection{
+
+    display:none;
+
+    min-height:100vh;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:50px;
+
+}
+
+
+.envelope{
+
+    position:relative;
+
+    width:350px;
+
+    height:240px;
+
+    background:#f8d7a5;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.5);
+
+}
+
+
+.front{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(135deg,
+
+    #ffd6a5,
+
+    #ffb5c5);
+
+    clip-path:polygon(0 0,100% 0,50% 60%);
+
+}
+
+
+.letter{
+
+    position:absolute;
+
+    width:320px;
+
+    left:15px;
+
+    top:20px;
+
+    padding:30px;
+
+    background:#fffaf0;
+
+    color:#333;
+
+    border-radius:10px;
+
+    transform:translateY(100px);
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+
+.letter h2{
+
+    font-family:'Dancing Script',cursive;
+
+    color:#d14b72;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+
+.letter p{
+
+    line-height:1.8;
+
+    margin-bottom:15px;
+
+}
+
+
+.letter h3{
+
+    font-family:'Dancing Script',cursive;
+
+    color:#d14b72;
+
+}
+
+
+.letter span{
+
+    display:block;
+
+    margin-top:20px;
+
+    font-size:14px;
+
+    color:#777;
+
+}
+
+
+/* OPEN STATE */
+
+.envelope.open .letter{
+
+    transform:translateY(-180px);
+
+    opacity:1;
+
+}
+
+
+/* ==========================================
+   ENDING SECTION
+========================================== */
+
+
+.ending{
+
+    min-height:80vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+
+.ending h2{
+
+    font-size:35px;
+
+    color:#ddd;
+
+}
+
+
+.ending h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:60px;
+
+    color:#ffd86b;
+
+    margin:25px;
+
+}
+
+
+.ending p{
+
+    color:#ccc;
+
+    font-size:20px;
+
+} /* ==========================================
+    BUTTERFLY ANIMATION
+ ========================================== */
+
+.butterfly{
+
+    position:fixed;
+
+    font-size:35px;
+
+    z-index:5;
+
+    pointer-events:none;
+
+    opacity:.8;
+
+}
+
+
+.b1{
+
+    left:10%;
+
+    bottom:20%;
+
+    animation:fly1 12s infinite ease-in-out;
+
+}
+
+
+.b2{
+
+    right:15%;
+
+    top:30%;
+
+    animation:fly2 15s infinite ease-in-out;
+
+}
+
+
+.b3{
+
+    left:50%;
+
+    bottom:10%;
+
+    animation:fly3 18s infinite ease-in-out;
+
+}
+
+
+@keyframes fly1{
+
+    0%{
+
+        transform:translate(0,0) rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:translate(120px,-200px) rotate(20deg);
+
+    }
+
+    100%{
+
+        transform:translate(0,0) rotate(0deg);
+
+    }
+
+}
+
+
+@keyframes fly2{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(-150px,150px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+
+@keyframes fly3{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translate(100px,-250px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* ==========================================
+   SCROLL REVEAL EFFECT
+========================================== */
+
+
+.section,
+.hero-content,
+.card,
+.ending{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* ==========================================
+   GLOW EFFECTS
+========================================== */
+
+
+.hero h1{
+
+    text-shadow:
+
+    0 0 15px rgba(255,216,107,.4),
+
+    0 0 40px rgba(255,126,179,.2);
+
+}
+
+
+.section h2{
+
+    text-shadow:
+
+    0 0 20px rgba(255,216,107,.3);
+
+}
+
+
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+========================================== */
+
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#050816;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(#6c63ff,#ff7eb3);
+
+    border-radius:20px;
+
+}
+
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+
+@media(max-width:768px){
+
+
+    .hero{
+
+        padding:25px;
+
+    }
+
+
+    .hero-content{
+
+        padding:35px 20px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+
+    .hero h3{
+
+        font-size:22px;
+
+    }
+
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+
+    .section{
+
+        padding:60px 20px;
+
+    }
+
+
+    .section h2{
+
+        font-size:34px;
+
+    }
+
+
+    .cards{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+    .card{
+
+        width:90%;
+
+    }
+
+
+    .wish{
+
+        width:55px;
+
+        height:55px;
+
+        font-size:25px;
+
+    }
+
+
+    .ending h1{
+
+        font-size:40px;
+
+    }
+
+
+    .ending h2{
+
+        font-size:25px;
+
+    }
+
+
+    .envelope{
+
+        width:280px;
+
+        height:200px;
+
+    }
+
+
+    .letter{
+
+        width:260px;
+
+        padding:20px;
+
+    }
+
+
+    .letter h2{
+
+        font-size:26px;
+
+    }
+
+
+}
+
+
+
+/* ==========================================
+   SMALL PHONE
+========================================== */
+
+
+@media(max-width:400px){
+
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+
+    .popup-card{
+
+        padding:25px;
+
+    }
+
+
+    .popup-card h2{
+
+        font-size:30px;
+
+    }
+
+
+}
