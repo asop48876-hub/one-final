@@ -1,115 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>Happy Friendship Day</title>
+    <title>Happy Friendship Day 🌻</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- Loading Screen -->
+    <!-- ========================= -->
+    <!-- LOADING SCREEN -->
+    <!-- ========================= -->
 
-<div id="loader">
+    <div id="loader">
 
-<div class="flower">
+        <div class="flower">
+            🌻
+        </div>
 
-🌻
+        <h2>Preparing something special...</h2>
 
-</div>
+        <div class="loading">
 
-<h2>Preparing something special...</h2>
+            <div class="loading-fill"></div>
 
-<div class="loading-bar">
+        </div>
 
-<div class="progress"></div>
+    </div>
 
-</div>
+    <!-- ========================= -->
+    <!-- NAME POPUP -->
+    <!-- ========================= -->
 
-</div>
+    <div id="popup">
 
-<!-- Main -->
+        <div class="popup-card">
 
-<div id="main">
+            <h2>Hello 🌸</h2>
 
-<!-- Background -->
+            <p>
 
-<div class="aurora"></div>
+                Before we begin...
 
-<div class="stars"></div>
+                may I know your name?
 
-<div class="particles"></div>
+            </p>
 
-<!-- Hero -->
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter your name">
 
-<section class="hero">
+            <button id="continueBtn">
 
-<h3 id="greeting"></h3>
+                Continue →
 
-<h1 id="typing"></h1>
+            </button>
 
-<p class="subtitle">
+        </div>
 
-Some friendships don't need grand words...
+    </div>
 
-they simply become a beautiful part of our story.
+    <!-- ========================= -->
+    <!-- MAIN WEBSITE -->
+    <!-- ========================= -->
 
-</p>
+    <main id="website">
 
-<button id="beginBtn">
+        <div class="aurora"></div>
 
-Begin →
+        <div class="stars"></div>
 
-</button>
+        <div class="particles"></div>
 
-</section>
+        <!-- ========================= -->
+        <!-- HERO -->
+        <!-- ========================= -->
 
-<!-- Name Popup -->
+        <section class="hero">
 
-<div id="popup">
+            <div class="hero-content">
 
-<div class="popup-card">
+                <h3 id="greeting"></h3>
 
-<h2>Welcome 🌻</h2>
+                <h1 id="typing"></h1>
 
-<p>
+                <p>
 
-Before we begin...
+                    Some friendships don't need grand words.
 
-May I know your name?
+                    They simply become one of the
 
-</p>
+                    most beautiful parts of our story.
 
-<input
+                </p>
 
-type="text"
+                <button id="beginJourney">
 
-id="username"
+                    Begin the Journey 🌻
 
-placeholder="Enter your name">
+                </button>
 
-<button id="enter">
+            </div>
 
-Continue</button>
+        </section>
 
-</div>
+        <!-- ========================= -->
+        <!-- SECTION 2 -->
+        <!-- ========================= -->
 
-</div>
+        <section class="section">
 
-</div>
+            <h2>
 
-<script src="script.js"></script>
+                A Little Appreciation
+
+            </h2>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <span>🌼</span>
+
+                    <h3>Kindness</h3>
+
+                    <p>
+
+                        Your kindness has an effortless way
+                        of making people feel welcomed.
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <span>🌸</span>
+
+                    <h3>Smile</h3>
+
+                    <p>
+
+                        Some smiles are ordinary.
+
+                        Yours leaves a lasting impression.
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <span>🌻</span>
+
+                    <h3>Friendship</h3>
+
+                    <p>
+
+                        Thank you for simply being yourself.
+
+                        That's more than enough.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- WISHES -->
+        <!-- ========================= -->
+
+        <section class="section">
+
+            <h2>
+
+                Click A Star ⭐
+
+            </h2>
+
+            <div class="wish-container">
+
+                <div class="wish">⭐</div>
+
+                <div class="wish">⭐</div>
+
+                <div class="wish">⭐</div>
+
+                <div class="wish">⭐</div>
+
+                <div class="wish">⭐</div>
+
+                <div class="wish">⭐</div>
+
+            </div>
+
+            <p id="wishText">
+
+                Click any star...
+
+            </p>
+
+        </section>        </section>
+
+        <!-- ========================= -->
+        <!-- FINAL SURPRISE -->
+        <!-- ========================= -->
+
+        <section class="section final-section">
+
+            <h2>
+
+                One Last Thing...
+
+            </h2>
+
+            <p>
+
+                There is something waiting for you.
+
+            </p>
+
+            <button id="openLetter">
+
+                Open the Envelope 💌
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- ENVELOPE -->
+        <!-- ========================= -->
+
+        <div id="envelopeSection">
+
+            <div class="envelope">
+
+                <div class="front"></div>
+
+                <div class="letter">
+
+                    <h2>
+
+                        Happy Friendship Day 🌻
+
+                    </h2>
+
+                    <p>
+
+                        Dear Priyanka,
+
+                    </p>
+
+                    <p>
+
+                        Thank you for being the wonderful
+                        person you are.
+
+                    </p>
+
+                    <p>
+
+                        I hope your life is always filled
+                        with happiness, success,
+                        beautiful memories,
+                        and people who genuinely value you.
+
+                    </p>
+
+                    <p>
+
+                        Keep smiling,
+                        keep shining,
+                        and never stop being yourself.
+
+                    </p>
+
+                    <p>
+
+                        Here's to many more moments
+                        of friendship ahead.
+
+                    </p>
+
+                    <h3>
+
+                        Happy Friendship Day 🌸
+
+                    </h3>
+
+                    <span>
+
+                        — From someone who truly values your friendship ❤️
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- ENDING -->
+        <!-- ========================= -->
+
+        <section class="ending">
+
+            <h2>
+
+                Every friendship deserves...
+
+            </h2>
+
+            <h1>
+
+                A Little Corner
+                on the Internet 🌻
+
+            </h1>
+
+            <p>
+
+                Thank you for visiting this little surprise.
+
+            </p>
+
+        </section>
+
+        <!-- Floating Butterflies -->
+
+        <div class="butterfly b1">🦋</div>
+
+        <div class="butterfly b2">🦋</div>
+
+        <div class="butterfly b3">🦋</div>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
