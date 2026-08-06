@@ -1,602 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Story</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-<title>One Last Thing...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- ==========================
-LOADING SCREEN
-=========================== -->
+<div class="background"></div>
 
-<div id="loader">
-
-    <div class="loader-heart">❤️</div>
-
-    <h2>Preparing Something Special...</h2>
-
-    <div class="loading-bar">
-
-        <div class="loading-progress"></div>
-
-    </div>
-
+<div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
 </div>
 
-<!-- ==========================
-BACKGROUND
-=========================== -->
+<div class="slider" id="slider">
 
-<div class="gradient-bg"></div>
+    <!-- PAGE 1 -->
+    <section class="page">
+        <div class="glass">
+            <h3>Hello...</h3>
 
-<div class="stars"></div>
+            <h1>
+                I made something<br>
+                just for you.
+            </h1>
 
-<div class="floating-hearts"></div>
+            <p>
+                It won't take long.
+                Just five little pages.
+            </p>
 
-<!-- ==========================
-MAIN APP
-=========================== -->
+            <button class="next-btn">
+                Begin →
+            </button>
+        </div>
+    </section>
 
-<div id="app">
+    <!-- PAGE 2 -->
+    <section class="page">
+        <div class="glass">
 
-<!-- ==========================
-SCENE 1
-=========================== -->
+            <span class="page-title">
+                Chapter 1
+            </span>
 
-<section class="scene active" id="scene1">
+            <h2>Our Story</h2>
 
-<div class="content">
+            <p>
+                <!-- Your own text here -->
+                This page will contain your memories,
+                how you met,
+                or something meaningful.
+            </p>
 
-<h3 class="fade">
+            <button class="next-btn">
+                Continue →
+            </button>
 
-Hi Priyanka,
+        </div>
+    </section>
 
-</h3>
+    <!-- PAGE 3 -->
+    <section class="page">
+        <div class="glass">
 
-<h1 class="typing">
+            <span class="page-title">
+                Chapter 2
+            </span>
 
-I wanted to tell you something...
+            <h2>What I Like About You</h2>
 
-</h1>
+            <ul class="qualities">
 
-<p>
+                <li>Your smile.</li>
 
-Not because I had to...
+                <li>Your kindness.</li>
 
-but because my heart wanted to.
+                <li>The way you make conversations comfortable.</li>
 
-</p>
+                <li>Your personality.</li>
 
-<button class="nextBtn">
+            </ul>
 
-Let's Begin ✨
+            <button class="next-btn">
+                Next →
+            </button>
 
-</button>
+        </div>
+    </section>
 
-</div>
+    <!-- PAGE 4 -->
+    <section class="page">
+        <div class="glass">
 
-</section>
+            <span class="page-title">
+                Chapter 3
+            </span>
 
-<!-- ==========================
-SCENE 2
-=========================== -->
+            <h2>Something I Wanted To Say</h2>
 
-<section class="scene" id="scene2">
+            <p>
 
-<div class="content">
+                This is where your confession
+                will be written.
 
-<h2>
+                Keep it honest.
 
-Every beautiful story
+                Keep it simple.
 
-starts with a simple moment.
+            </p>
 
-</h2>
+            <button class="next-btn">
+                One Last Page →
+            </button>
 
-<p>
+        </div>
+    </section>
 
-Ours began with a conversation.
+    <!-- PAGE 5 -->
+    <section class="page">
 
-</p>
+        <div class="glass final">
 
-<p>
+            <h2>Thank You ❤️</h2>
 
-I never imagined
+            <p>
 
-that one day
+                Thank you for reading everything.
 
-I'd create something like this.
+                Whatever your answer is,
+                thank you for giving me your time.
 
-</p>
+            </p>
 
-<button class="nextBtn">
+            <div class="buttons">
 
-Continue →
+                <button class="yes">
+                    I'd love to talk
+                </button>
 
-</button>
+                <button class="no">
+                    Maybe Later
+                </button>
 
-</div>
+            </div>
 
-</section>
+        </div>
 
-<!-- ==========================
-SCENE 3
-=========================== -->
-
-<section class="scene" id="scene3">
-
-<div class="content">
-
-<h2>
-
-Things that make you special
-
-</h2>
-
-<div class="qualities">
-
-<div class="quality">
-
-🌸
-
-<span>Kindness</span>
-
-</div>
-
-<div class="quality">
-
-😊
-
-<span>Your Smile</span>
-
-</div>
-
-<div class="quality">
-
-✨
-
-<span>Your Heart</span>
-
-</div>
-
-<div class="quality">
-
-🌼
-
-<span>Your Presence</span>
-
-</div>
-
-</div>
-
-<button class="nextBtn">
-
-Continue →
-
-</button>
-
-</div>
-
-</section><!-- ==========================
-SCENE 4
-=========================== -->
-
-<section class="scene" id="scene4">
-
-<div class="content">
-
-<h2>
-There were moments...
-</h2>
-
-<p class="subtitle">
-Maybe they looked ordinary.
-</p>
-
-<div class="memory-grid">
-
-<div class="memory-card">
-💬
-<h3>Our Conversations</h3>
-<p>
-Every conversation with you
-became the best part of my day.
-</p>
-</div>
-
-<div class="memory-card">
-😊
-<h3>Your Smile</h3>
-<p>
-It had a way of making
-everything feel lighter.
-</p>
-</div>
-
-<div class="memory-card">
-🌸
-<h3>Your Presence</h3>
-<p>
-Some people make
-ordinary moments unforgettable.
-</p>
-</div>
-
-</div>
-
-<button class="nextBtn">
-Continue →
-</button>
-
-</div>
-
-</section>
-
-<!-- ==========================
-SCENE 5
-=========================== -->
-
-<section class="scene" id="scene5">
-
-<div class="content narrow">
-
-<h2>
-Somewhere along the way...
-</h2>
-
-<p class="large-text">
-Without realizing it...
-</p>
-
-<p class="large-text delay1">
-You became someone
-I genuinely looked
-forward to.
-</p>
-
-<p class="large-text delay2">
-And every little interaction
-started meaning more.
-</p>
-
-<button class="nextBtn">
-Continue →
-</button>
-
-</div>
-
-</section>
-
-<!-- ==========================
-SCENE 6
-=========================== -->
-
-<section class="scene" id="scene6">
-
-<div class="content">
-
-<h2>
-A Letter For You
-</h2>
-
-<div class="letter-card">
-
-<p>
-
-Dear Priyanka,
-
-</p>
-
-<p>
-
-Thank you...
-
-for every smile,
-
-every conversation,
-
-and every moment
-that made life brighter.
-
-</p>
-
-<p>
-
-You probably never realized
-how much those little things
-meant to me.
-
-</p>
-
-<p>
-
-Some people become important
-without even trying.
-
-You're one of them.
-
-</p>
-
-</div>
-
-<button class="nextBtn">
-Continue →
-</button>
-
-</div>
-
-</section>
-
-<!-- ==========================
-SCENE 7
-=========================== -->
-
-<section class="scene" id="scene7">
-
-<div class="content narrow">
-
-<h2>
-
-Before I continue...
-
-</h2>
-
-<p class="big-line">
-
-Thank you
-
-for reading this far.
-
-</p>
-
-<p>
-
-There's only
-
-one last thing
-
-I'd like to tell you.
-
-</p>
-
-<button class="nextBtn">
-
-Continue ❤️
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ==========================
-SCENE 8
-=========================== -->
-
-<section class="scene" id="scene8">
-
-<div class="content">
-
-<h2>
-
-Then I realized...
-
-</h2>
-
-<p class="large-text">
-
-It wasn't just admiration.
-
-</p>
-
-<p class="large-text delay1">
-
-It wasn't just friendship.
-
-</p>
-
-<p class="large-text delay2">
-
-It was something much deeper.
-
-</p>
-
-<button class="nextBtn">
-
-Continue →
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ==========================
-SCENE 9
-=========================== -->
-
-<section class="scene" id="scene9">
-
-<div class="content proposal">
-
-<h2>
-
-Priyanka...
-
-</h2>
-
-<p>
-
-The more I got to know you,
-
-the more special you became.
-
-</p>
-
-<p>
-
-I don't know
-
-what tomorrow holds.
-
-</p>
-
-<p>
-
-But I know
-
-I'd regret it forever
-
-if I never told you
-
-how I truly feel.
-
-</p>
-
-<button class="nextBtn">
-
-One Last Thing ❤️
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ==========================
-SCENE 10
-=========================== -->
-
-<section class="scene" id="scene10">
-
-<div class="content final">
-
-<h1>
-
-Would you like
-
-to go on this journey
-
-with me?
-
-</h1>
-
-<p>
-
-No pressure.
-
-No expectations.
-
-Just an honest question
-
-from someone
-
-who truly likes you.
-
-</p>
-
-<div class="answer-buttons">
-
-<button id="yesBtn">
-
-❤️ Yes
-
-</button>
-
-<button id="timeBtn">
-
-🌸 I Need Some Time
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ==========================
-YES SCREEN
-=========================== -->
-
-<section class="scene" id="successScene">
-
-<div class="content">
-
-<h1>❤️</h1>
-
-<h2>
-
-Thank You.
-
-</h2>
-
-<p>
-
-You just made
-
-my world
-
-a little brighter.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ==========================
-TIME SCREEN
-=========================== -->
-
-<section class="scene" id="timeScene">
-
-<div class="content">
-
-<h2>
-
-Take Your Time 🌸
-
-</h2>
-
-<p>
-
-Whatever your answer is,
-
-I'll always respect it.
-
-</p>
-
-<p>
-
-Thank you
-
-for reading everything.
-
-</p>
-
-</div>
-
-</section>
+    </section>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
