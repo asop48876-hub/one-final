@@ -2,119 +2,106 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>Happy Friendship Day 🌻</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Last Thing...</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ========================= -->
-    <!-- LOADING SCREEN -->
-    <!-- ========================= -->
+    <!-- =========================
+         LOADER
+    ========================== -->
 
     <div id="loader">
 
-        <div class="flower">
-            🌻
-        </div>
+        <div class="loader-heart">❤️</div>
 
-        <h2>Preparing something special...</h2>
+        <h2>Preparing a little surprise...</h2>
 
-        <div class="loading">
+        <div class="loader-bar">
 
-            <div class="loading-fill"></div>
+            <div class="loader-progress"></div>
 
         </div>
 
     </div>
 
-    <!-- ========================= -->
-    <!-- NAME POPUP -->
-    <!-- ========================= -->
 
-    <div id="popup">
+    <!-- =========================
+         MUSIC BUTTON
+    ========================== -->
 
-        <div class="popup-card">
+    <button id="musicBtn">
 
-            <h2>Hello 🌸</h2>
+        🔊 Music
 
-            <p>
+    </button>
 
-                Before we begin...
+    <audio id="bgMusic" loop>
 
-                may I know your name?
+        <source src="music.mp3" type="audio/mpeg">
 
-            </p>
+    </audio>
 
-            <input
-                type="text"
-                id="username"
-                placeholder="Enter your name">
 
-            <button id="continueBtn">
+    <!-- =========================
+         BACKGROUND EFFECTS
+    ========================== -->
 
-                Continue →
+    <div class="aurora"></div>
 
-            </button>
+    <div class="stars"></div>
 
-        </div>
+    <div class="petals"></div>
 
-    </div>
 
-    <!-- ========================= -->
-    <!-- MAIN WEBSITE -->
-    <!-- ========================= -->
+    <!-- =========================
+         MAIN CONTAINER
+    ========================== -->
 
-    <main id="website">
+    <div id="app">
 
-        <div class="aurora"></div>
 
-        <div class="stars"></div>
+        <!-- =========================================
+                    SCENE 1
+        ========================================== -->
 
-        <div class="particles"></div>
+        <section class="scene active" id="scene1">
 
-        <!-- ========================= -->
-        <!-- HERO -->
-        <!-- ========================= -->
+            <div class="content">
 
-        <section class="hero">
+                <h3 class="fade">
 
-            <div class="hero-content">
+                    Hi, Priyanka.
 
-                <h3 id="greeting"></h3>
+                </h3>
 
-                <h1 id="typing"></h1>
+                <h1 class="typing">
+
+                    I wanted to share something with you...
+
+                </h1>
 
                 <p>
 
-                    Some friendships don't need grand words.
+                    Not because I had to...
 
-                    They simply become one of the
-
-                    most beautiful parts of our story.
+                    but because it felt right.
 
                 </p>
 
-                <button id="beginJourney">
+                <button class="nextBtn">
 
-                    Begin the Journey 🌻
+                    Let's Begin ✨
 
                 </button>
 
@@ -122,64 +109,456 @@
 
         </section>
 
-        <!-- ========================= -->
-        <!-- SECTION 2 -->
-        <!-- ========================= -->
 
-        <section class="section">
 
-            <h2>
+        <!-- =========================================
+                    SCENE 2
+        ========================================== -->
 
-                A Little Appreciation
+        <section class="scene" id="scene2">
 
-            </h2>
+            <div class="content">
 
-            <div class="cards">
+                <h2>
 
-                <div class="card">
+                    Every story starts somewhere...
 
-                    <span>🌼</span>
+                </h2>
 
-                    <h3>Kindness</h3>
+                <p>
 
-                    <p>
+                    Ours began with a simple conversation.
 
-                        Your kindness has an effortless way
-                        of making people feel welcomed.
+                </p>
 
-                    </p>
+                <p>
+
+                    I never imagined...
+
+                    that one day I'd be creating something like this.
+
+                </p>
+
+                <button class="nextBtn">
+
+                    Continue →
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+                    SCENE 3
+        ========================================== -->
+
+        <section class="scene" id="scene3">
+
+            <div class="content">
+
+                <h2>
+
+                    Some things made you unforgettable.
+
+                </h2>
+
+                <div class="qualities">
+
+                    <div class="quality">
+
+                        🌸
+
+                        <span>Kindness</span>
+
+                    </div>
+
+                    <div class="quality">
+
+                        🌻
+
+                        <span>Your Smile</span>
+
+                    </div>
+
+                    <div class="quality">
+
+                        ✨
+
+                        <span>Your Heart</span>
+
+                    </div>
+
+                    <div class="quality">
+
+                        ❤️
+
+                        <span>Your Presence</span>
+
+                    </div>
 
                 </div>
 
-                <div class="card">
+                <button class="nextBtn">
 
-                    <span>🌸</span>
+                    Continue →
 
-                    <h3>Smile</h3>
+                </button>
 
-                    <p>
+            </div>
 
-                        Some smiles are ordinary.
+        </section>
 
-                        Yours leaves a lasting impression.
 
-                    </p>
+
+        <!-- =========================================
+             PART 1 ENDS HERE
+             NEXT PART STARTS FROM SCENE 4
+        ========================================== -->
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>        <!-- =========================================
+                    SCENE 4
+        ========================================== -->
+
+        <section class="scene" id="scene4">
+
+            <div class="content">
+
+                <h2>
+                    There were moments...
+                </h2>
+
+                <p class="subtitle">
+                    Maybe they seemed ordinary.
+                </p>
+
+                <div class="memory-grid">
+
+                    <div class="memory-card">
+                        💬
+                        <h3>Our Conversations</h3>
+                        <p>
+                            Somehow, every conversation with you
+                            became the best part of my day.
+                        </p>
+                    </div>
+
+                    <div class="memory-card">
+                        😊
+                        <h3>Your Smile</h3>
+                        <p>
+                            It had a way of making everything
+                            feel a little lighter.
+                        </p>
+                    </div>
+
+                    <div class="memory-card">
+                        🌸
+                        <h3>Your Presence</h3>
+                        <p>
+                            Even ordinary moments
+                            felt special with you.
+                        </p>
+                    </div>
 
                 </div>
 
-                <div class="card">
+                <button class="nextBtn">
+                    Continue →
+                </button>
 
-                    <span>🌻</span>
+            </div>
 
-                    <h3>Friendship</h3>
+        </section>
 
-                    <p>
 
-                        Thank you for simply being yourself.
 
-                        That's more than enough.
+        <!-- =========================================
+                    SCENE 5
+        ========================================== -->
 
-                    </p>
+        <section class="scene" id="scene5">
+
+            <div class="content narrow">
+
+                <h2>
+                    Then...
+                </h2>
+
+                <p class="large-text">
+                    Somewhere along the way...
+                </p>
+
+                <p class="large-text delay1">
+                    Without realizing it...
+                </p>
+
+                <p class="large-text delay2">
+                    You became someone
+                    I genuinely looked forward to.
+                </p>
+
+                <button class="nextBtn">
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+                    SCENE 6
+        ========================================== -->
+
+        <section class="scene" id="scene6">
+
+            <div class="content">
+
+                <h2>
+                    One Letter...
+                </h2>
+
+                <p>
+                    There were things
+                    I wanted to tell you.
+                </p>
+
+                <div class="envelope">
+
+                    <div class="envelope-front"></div>
+
+                    <div class="letter">
+
+                        <h3>
+                            Dear Priyanka,
+                        </h3>
+
+                        <p>
+
+                            Thank you.
+
+                            For every smile...
+
+                            every conversation...
+
+                            every little moment
+                            you probably never realized
+                            meant so much to me.
+
+                        </p>
+
+                        <p>
+
+                            Some people simply
+                            become important
+                            without making any effort.
+
+                            You're one of them.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button id="openLetter">
+
+                    Open Letter 💌
+
+                </button>
+
+                <button class="nextBtn">
+
+                    Continue →
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+                    SCENE 7
+        ========================================== -->
+
+        <section class="scene" id="scene7">
+
+            <div class="content narrow">
+
+                <h2>
+
+                    Before I continue...
+
+                </h2>
+
+                <p class="big-line">
+
+                    Thank you
+                    for coming this far.
+
+                </p>
+
+                <p>
+
+                    There is only
+                    one last thing
+                    I'd like to tell you.
+
+                </p>
+
+                <button class="nextBtn">
+
+                    Continue ❤️
+
+                </button>
+
+            </div>
+
+        </section>        <!-- =========================================
+                    SCENE 8
+        ========================================== -->
+
+        <section class="scene" id="scene8">
+
+            <div class="content narrow">
+
+                <h2>
+                    And then...
+                </h2>
+
+                <p class="large-text">
+                    I finally understood
+                    what my heart had been trying
+                    to tell me all this time.
+                </p>
+
+                <p class="large-text delay1">
+                    It wasn't just admiration.
+                </p>
+
+                <p class="large-text delay2">
+                    It wasn't just friendship.
+                </p>
+
+                <button class="nextBtn">
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+                    SCENE 9
+        ========================================== -->
+
+        <section class="scene" id="scene9">
+
+            <div class="content proposal">
+
+                <h2>
+                    Priyanka...
+                </h2>
+
+                <p class="proposal-line">
+
+                    The more I got to know you,
+
+                    the more special you became to me.
+
+                </p>
+
+                <p class="proposal-line">
+
+                    I don't know what the future holds...
+
+                </p>
+
+                <p class="proposal-line">
+
+                    But I do know
+
+                    that I'd regret it
+
+                    if I never told you
+
+                    how I truly feel.
+
+                </p>
+
+                <button class="nextBtn">
+
+                    One Last Thing ❤️
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+                    SCENE 10
+        ========================================== -->
+
+        <section class="scene" id="scene10">
+
+            <div class="content final">
+
+                <h1>
+
+                    Would you like
+
+                    to go on this journey
+
+                    with me?
+
+                </h1>
+
+                <p>
+
+                    No pressure.
+
+                    No expectations.
+
+                    Just an honest question
+
+                    from someone
+
+                    who truly likes you.
+
+                </p>
+
+                <div class="answer-buttons">
+
+                    <button id="yesBtn">
+
+                        ❤️ Yes, I'd Love To
+
+                    </button>
+
+                    <button id="timeBtn">
+
+                        🌸 I Need Some Time
+
+                    </button>
 
                 </div>
 
@@ -187,177 +566,95 @@
 
         </section>
 
-        <!-- ========================= -->
-        <!-- WISHES -->
-        <!-- ========================= -->
 
-        <section class="section">
 
-            <h2>
+        <!-- =========================================
+                    SUCCESS SCREEN
+        ========================================== -->
 
-                Click A Star ⭐
+        <section class="scene" id="successScene">
 
-            </h2>
+            <div class="content">
 
-            <div class="wish-container">
+                <h1>
 
-                <div class="wish">⭐</div>
+                    ❤️
 
-                <div class="wish">⭐</div>
+                </h1>
 
-                <div class="wish">⭐</div>
+                <h2>
 
-                <div class="wish">⭐</div>
+                    Thank You.
 
-                <div class="wish">⭐</div>
+                </h2>
 
-                <div class="wish">⭐</div>
+                <p>
 
-            </div>
+                    You just made
 
-            <p id="wishText">
+                    my world
 
-                Click any star...
+                    a little brighter.
 
-            </p>
+                </p>
 
-        </section>        </section>
+                <p>
 
-        <!-- ========================= -->
-        <!-- FINAL SURPRISE -->
-        <!-- ========================= -->
+                    I can't wait
 
-        <section class="section final-section">
+                    to create beautiful memories
 
-            <h2>
+                    together.
 
-                One Last Thing...
-
-            </h2>
-
-            <p>
-
-                There is something waiting for you.
-
-            </p>
-
-            <button id="openLetter">
-
-                Open the Envelope 💌
-
-            </button>
-
-        </section>
-
-        <!-- ========================= -->
-        <!-- ENVELOPE -->
-        <!-- ========================= -->
-
-        <div id="envelopeSection">
-
-            <div class="envelope">
-
-                <div class="front"></div>
-
-                <div class="letter">
-
-                    <h2>
-
-                        Happy Friendship Day 🌻
-
-                    </h2>
-
-                    <p>
-
-                        Dear Priyanka,
-
-                    </p>
-
-                    <p>
-
-                        Thank you for being the wonderful
-                        person you are.
-
-                    </p>
-
-                    <p>
-
-                        I hope your life is always filled
-                        with happiness, success,
-                        beautiful memories,
-                        and people who genuinely value you.
-
-                    </p>
-
-                    <p>
-
-                        Keep smiling,
-                        keep shining,
-                        and never stop being yourself.
-
-                    </p>
-
-                    <p>
-
-                        Here's to many more moments
-                        of friendship ahead.
-
-                    </p>
-
-                    <h3>
-
-                        Happy Friendship Day 🌸
-
-                    </h3>
-
-                    <span>
-
-                        — From someone who truly values your friendship ❤️
-
-                    </span>
-
-                </div>
+                </p>
 
             </div>
 
-        </div>
+        </section>
 
-        <!-- ========================= -->
-        <!-- ENDING -->
-        <!-- ========================= -->
 
-        <section class="ending">
 
-            <h2>
+        <!-- =========================================
+                    NEED TIME SCREEN
+        ========================================== -->
 
-                Every friendship deserves...
+        <section class="scene" id="timeScene">
 
-            </h2>
+            <div class="content">
 
-            <h1>
+                <h2>
 
-                A Little Corner
-                on the Internet 🌻
+                    Of course. 🌸
 
-            </h1>
+                </h2>
 
-            <p>
+                <p>
 
-                Thank you for visiting this little surprise.
+                    Thank you
 
-            </p>
+                    for reading everything.
+
+                </p>
+
+                <p>
+
+                    Whatever your answer is,
+
+                    I'll always respect it.
+
+                </p>
+
+                <p>
+
+                    Take all the time you need.
+
+                </p>
+
+            </div>
 
         </section>
 
-        <!-- Floating Butterflies -->
-
-        <div class="butterfly b1">🦋</div>
-
-        <div class="butterfly b2">🦋</div>
-
-        <div class="butterfly b3">🦋</div>
-
-    </main>
+    </div>
 
     <script src="script.js"></script>
 
