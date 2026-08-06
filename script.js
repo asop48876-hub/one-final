@@ -1,242 +1,210 @@
 // ======================================
-// LOADER
+// SELECT ELEMENTS
 // ======================================
 
-window.addEventListener("load", () => {
+const slider = document.getElementById("slider");
+const pages = document.querySelectorAll(".page");
+const nextButtons = document.querySelectorAll(".next-btn");
+const progressBar = document.getElementById("progressBar");
 
-    setTimeout(() => {
+let currentPage = 0;
+const totalPages = pages.length;
 
-        document.getElementById("loader").classList.add("hide");
-
-    }, 2800);
-
-});
-
-// ======================================
-// SCENES
-// ======================================
-
-const scenes = document.querySelectorAll(".scene");
-
-let currentScene = 0;
 
 // ======================================
-// SHOW SCENE
+// UPDATE PAGE
 // ======================================
 
-function showScene(index) {
+function updatePage() {
 
-    if (index < 0 || index >= scenes.length) return;
+    slider.style.transform =
+        `translateX(-${currentPage * 100}vw)`;
 
-    scenes.forEach(scene => {
+    const progress =
+        ((currentPage + 1) / totalPages) * 100;
 
-        scene.classList.remove("active");
-
-    });
-
-    scenes[index].classList.add("active");
-
-    currentScene = index;
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    progressBar.style.width = progress + "%";
 
 }
+
 
 // ======================================
 // NEXT BUTTONS
 // ======================================
 
-document.querySelectorAll(".nextBtn").forEach(button => {
+nextButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        showScene(currentScene + 1);
+        if (currentPage < totalPages - 1) {
+
+            currentPage++;
+
+            updatePage();
+
+        }
 
     });
 
-});// ======================================
-// FINAL BUTTONS
+});
+
+
+// ======================================
+// KEYBOARD SUPPORT
 // ======================================
 
-const yesBtn = document.getElementById("yesBtn");
-const timeBtn = document.getElementById("timeBtn");
+document.addEventListener("keydown", e => {
 
-const successScene = document.getElementById("successScene");
-const timeScene = document.getElementById("timeScene");
+    if (e.key === "ArrowRight") {
+
+        if (currentPage < totalPages - 1) {
+
+            currentPage++;
+
+            updatePage();
+
+        }
+
+    }
+
+    if (e.key === "ArrowLeft") {
+
+        if (currentPage > 0) {
+
+            currentPage--;
+
+            updatePage();
+
+        }
+
+    }
+
+});
+
+
+// ======================================
+// MOBILE SWIPE
+// ======================================
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener("touchstart", e => {
+
+    touchStartX = e.changedTouches[0].screenX;
+
+});
+
+document.addEventListener("touchend", e => {
+
+    touchEndX = e.changedTouches[0].screenX;
+
+    if (touchStartX - touchEndX > 70) {
+
+        if (currentPage < totalPages - 1) {
+
+            currentPage++;
+
+            updatePage();
+
+        }
+
+    }
+
+    if (touchEndX - touchStartX > 70) {
+
+        if (currentPage > 0) {
+
+            currentPage--;
+
+            updatePage();
+
+        }
+
+    }
+
+});
+
+
+// ======================================
+// MOUSE LIGHT EFFECT
+// ======================================
+
+const light = document.createElement("div");
+
+light.style.position = "fixed";
+light.style.width = "220px";
+light.style.height = "220px";
+light.style.borderRadius = "50%";
+light.style.pointerEvents = "none";
+light.style.background =
+"radial-gradient(circle, rgba(255,255,255,.12), transparent 70%)";
+light.style.filter = "blur(15px)";
+light.style.zIndex = "0";
+
+document.body.appendChild(light);
+
+document.addEventListener("mousemove", e => {
+
+    light.style.left = (e.clientX - 110) + "px";
+    light.style.top = (e.clientY - 110) + "px";
+
+});
+
+
+// ======================================
+// PLAYFUL "MAYBE LATER" BUTTON
+// ======================================
+
+const noBtn = document.querySelector(".no");
+
+if (noBtn) {
+
+    noBtn.addEventListener("mouseenter", () => {
+
+        const maxX = window.innerWidth - noBtn.offsetWidth - 30;
+        const maxY = window.innerHeight - noBtn.offsetHeight - 30;
+
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        noBtn.style.position = "fixed";
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+
+    });
+
+}
+
+
+// ======================================
+// YES BUTTON
+// ======================================
+
+const yesBtn = document.querySelector(".yes");
 
 if (yesBtn) {
 
     yesBtn.addEventListener("click", () => {
 
-        scenes.forEach(scene => scene.classList.remove("active"));
+        alert(
+`😊
 
-        successScene.classList.add("active");
+Thank you for reading everything.
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+No matter what your answer is,
+I'm really happy you took the time to read this.
 
-    });
-
-}
-
-if (timeBtn) {
-
-    timeBtn.addEventListener("click", () => {
-
-        scenes.forEach(scene => scene.classList.remove("active"));
-
-        timeScene.classList.add("active");
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+❤️`
+        );
 
     });
 
 }
 
-// ======================================
-// KEYBOARD NAVIGATION (OPTIONAL)
-// ======================================
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "ArrowRight") {
-
-        if (currentScene < 9) {
-
-            showScene(currentScene + 1);
-
-        }
-
-    }
-
-    if (event.key === "ArrowLeft") {
-
-        if (currentScene > 0) {
-
-            showScene(currentScene - 1);
-
-        }
-
-    }
-
-});
 
 // ======================================
-// FADE IN CONTENT WHEN SCENE CHANGES
+// INITIALIZE
 // ======================================
 
-const observer = new MutationObserver(() => {
-
-    const active = document.querySelector(".scene.active");
-
-    if (!active) return;
-
-    const content = active.querySelector(".content");
-
-    if (!content) return;
-
-    content.classList.remove("animate");
-
-    void content.offsetWidth;
-
-    content.classList.add("animate");
-
-});
-
-observer.observe(document.getElementById("app"), {
-    subtree: true,
-    attributes: true,
-    attributeFilter: ["class"]
-});// ======================================
-// FLOATING HEARTS
-// ======================================
-
-const heartsContainer = document.querySelector(".floating-hearts");
-
-function createHeart() {
-
-    if (!heartsContainer) return;
-
-    const heart = document.createElement("span");
-
-    heart.innerHTML = Math.random() > 0.5 ? "❤️" : "💖";
-
-    heart.style.position = "absolute";
-    heart.style.left = Math.random() * 100 + "%";
-    heart.style.bottom = "-30px";
-
-    heart.style.fontSize = (16 + Math.random() * 20) + "px";
-
-    heart.style.opacity = Math.random() * 0.5 + 0.3;
-
-    heart.style.animation = `heartFloat ${5 + Math.random() * 5}s linear forwards`;
-
-    heartsContainer.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 10000);
-
-}
-
-setInterval(createHeart, 900);
-
-// ======================================
-// HEART FLOAT KEYFRAME
-// ======================================
-
-const style = document.createElement("style");
-
-style.innerHTML = `
-@keyframes heartFloat{
-0%{
-transform:translateY(0) rotate(0deg);
-opacity:0;
-}
-15%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh) rotate(360deg);
-opacity:0;
-}
-}
-`;
-
-document.head.appendChild(style);
-
-// ======================================
-// PREVENT DOUBLE CLICK
-// ======================================
-
-document.querySelectorAll(".nextBtn").forEach(btn => {
-
-    btn.addEventListener("click", () => {
-
-        btn.disabled = true;
-
-        setTimeout(() => {
-
-            btn.disabled = false;
-
-        }, 500);
-
-    });
-
-});
-
-// ======================================
-// INITIAL SCENE
-// ======================================
-
-showScene(0);
-
-console.log("Website Loaded Successfully ❤️");
+updatePage();
