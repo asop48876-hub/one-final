@@ -3,239 +3,259 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>Just For You ❤️</title>
+<title>Just For You ❤️</title>
 
-    <link rel="stylesheet"
-          href="style.css">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-    <!-- Google Font -->
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
 <body>
 
 
-<!-- ==========================
-      LOADING SCREEN
+
+<!-- =========================
+        LOADER
 ========================== -->
 
 <div id="loader">
 
-    <div class="loader-content">
+<div class="loaderBox">
 
-        <div class="loader-heart">
+<div class="heart">
 
-            ❤
+❤
 
-        </div>
+</div>
 
-        <h2>
+<h2>
 
-            Preparing Something Special...
+Preparing Something Special...
 
-        </h2>
+</h2>
 
-    </div>
+</div>
 
 </div>
 
 
 
-<!-- ==========================
-      BACKGROUND
+<!-- =========================
+     BACKGROUND EFFECTS
 ========================== -->
 
 <div id="background">
 
-    <div class="blur blur1"></div>
+<div class="gradient"></div>
 
-    <div class="blur blur2"></div>
+<div class="orb orb1"></div>
 
-    <div class="blur blur3"></div>
+<div class="orb orb2"></div>
+
+<div class="orb orb3"></div>
 
 </div>
 
 
 
-<!-- ==========================
-        PROGRESS BAR
+<!-- =========================
+     TOP BAR
 ========================== -->
 
-<header>
+<header id="topBar">
 
-    <div id="progress">
+<div id="progressContainer">
 
-        <div id="progress-fill"></div>
+<div id="progressBar"></div>
 
-    </div>
+</div>
+
+<div id="pageNumber">
+
+01 / 05
+
+</div>
 
 </header>
 
 
 
-<!-- ==========================
-        MAIN CONTAINER
+<!-- =========================
+       BOOK CONTAINER
 ========================== -->
 
-<main id="book">
+<div id="book">
 
 
 
-<!-- =======================================================
-                    PAGE 1
-======================================================= -->
+<!-- =====================================
+            SCENE 1
+===================================== -->
 
-<section class="page active">
+<section class="scene active">
 
-    <div class="glass">
+<div class="card">
 
-        <span class="chapter">
+<span class="chapter">
 
-            Chapter 01
+Chapter 01
 
-        </span>
+</span>
 
-        <h1>
+<h1>
 
-            Before You Continue...
+Before You Continue...
 
-        </h1>
+</h1>
 
-        <p>
+<p>
 
-            I made something just for you.
+I made something
+only for you.
 
-            It isn't long.
+It won't take much of your time,
 
-            But every word comes from my heart.
+but every word is genuine.
 
-        </p>
+</p>
 
-        <button class="next">
+<button class="nextBtn">
 
-            Begin →
+Begin →
 
-        </button>
+</button>
 
-    </div>
-
-</section>
-
-
-
-<!-- =======================================================
-                    PAGE 2
-======================================================= -->
-
-<section class="page">
-
-    <div class="glass">
-
-        <span class="chapter">
-
-            Chapter 02
-
-        </span>
-
-        <h2>
-
-            Our Story
-
-        </h2>
-
-        <p>
-
-            This page is where you will write
-            how you both met,
-            your favourite memories,
-            funny conversations,
-            or anything meaningful.
-
-        </p>
-
-        <div class="navigation">
-
-            <button class="prev">
-
-                ← Previous
-
-            </button>
-
-            <button class="next">
-
-                Continue →
-
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 
-<!-- =======================================================
-                    PAGE 3
-======================================================= -->
 
-<section class="page">
 
-    <div class="glass">
+<!-- =====================================
+            SCENE 2
+===================================== -->
+
+<section class="scene">
+
+<div class="card">
+
+<span class="chapter">
+
+Chapter 02
+
+</span>
+
+<h2>
+
+Our Story
+
+</h2>
+
+<p>
+
+Write here about
+
+how you both met,
+
+the first conversation,
+
+small memories,
+
+inside jokes,
+
+or anything that became special.
+
+</p>
+
+<div class="navigation">
+
+<button class="prevBtn">
+
+← Previous
+
+</button>
+
+<button class="nextBtn">
+
+Continue →
+
+</button>
+
+</div>
+
+</div>
+
+</section><!-- =====================================
+            SCENE 3
+===================================== -->
+
+<section class="scene">
+
+    <div class="card">
 
         <span class="chapter">
-
             Chapter 03
-
         </span>
 
         <h2>
-
             What Makes You Special
-
         </h2>
 
-        <ul>
+        <p class="intro">
+            There are countless reasons,
+            but these are the ones
+            I wanted to tell you.
+        </p>
 
-            <li>Your kindness.</li>
+        <div class="qualities">
 
-            <li>Your smile.</li>
+            <div class="quality">
+                <span>😊</span>
+                <p>Your kindness makes people feel comfortable.</p>
+            </div>
 
-            <li>Your positivity.</li>
+            <div class="quality">
+                <span>✨</span>
+                <p>Your smile can brighten even an ordinary day.</p>
+            </div>
 
-            <li>The comfort I feel while talking to you.</li>
+            <div class="quality">
+                <span>💬</span>
+                <p>Talking with you never feels forced or boring.</p>
+            </div>
 
-            <li>Your beautiful personality.</li>
+            <div class="quality">
+                <span>🌸</span>
+                <p>You are simply yourself, and that's what makes you special.</p>
+            </div>
 
-        </ul>
+        </div>
 
         <div class="navigation">
 
-            <button class="prev">
-
+            <button class="prevBtn">
                 ← Previous
-
             </button>
 
-            <button class="next">
-
+            <button class="nextBtn">
                 Continue →
-
             </button>
 
         </div>
@@ -246,64 +266,59 @@
 
 
 
-<!-- =======================================================
-                    PAGE 4
-======================================================= -->
+<!-- =====================================
+            SCENE 4
+===================================== -->
 
-<section class="page">
+<section class="scene">
 
-    <div class="glass">
+    <div class="card">
 
         <span class="chapter">
-
             Chapter 04
-
         </span>
 
         <h2>
-
-            Something I've Wanted To Say...
-
+            Something I've Wanted To Say
         </h2>
 
         <p>
 
-            For quite some time,
+            Over time,
 
-            I've wanted to tell you something.
-
-            Every conversation with you,
-
-            every smile,
-
-            every little moment
-
-            slowly became important to me.
+            our conversations became
+            something I genuinely looked forward to.
 
         </p>
 
         <p>
 
-            I don't know what the future holds,
+            Somewhere along the journey,
 
-            but I do know
+            I realized that
 
-            you're someone I genuinely admire.
+            you became much more than
+            just someone I know.
+
+        </p>
+
+        <p>
+
+            So today,
+
+            I simply wanted to be honest
+            about my feelings.
 
         </p>
 
         <div class="navigation">
 
-            <button class="prev">
-
+            <button class="prevBtn">
                 ← Previous
-
             </button>
 
-            <button class="next">
-
-                Last Page →
-
+            <button class="nextBtn">
+                Final Page →
             </button>
 
         </div>
@@ -314,30 +329,29 @@
 
 
 
-<!-- =======================================================
-                    PAGE 5
-======================================================= -->
+<!-- =====================================
+            SCENE 5
+===================================== -->
 
-<section class="page">
+<section class="scene">
 
-    <div class="glass final">
+    <div class="card finalCard">
 
         <span class="chapter">
-
             Final Chapter
-
         </span>
 
         <h2>
-
             Thank You ❤️
-
         </h2>
 
         <p>
 
-            Thank you for taking the time
-            to read everything.
+            Thank you for reading everything.
+
+        </p>
+
+        <p>
 
             Whatever your answer is,
 
@@ -345,18 +359,22 @@
 
         </p>
 
-        <div class="choice-buttons">
+        <p>
+
+            I just wanted to tell you
+            what my heart has been saying
+            for a long time.
+
+        </p>
+
+        <div class="choiceButtons">
 
             <button id="yesBtn">
-
                 Can We Be Together?
-
             </button>
 
             <button id="laterBtn">
-
                 I Need Some Time
-
             </button>
 
         </div>
@@ -367,12 +385,47 @@
 
 
 
-</main>
+<!-- =====================================
+        THANK YOU MODAL
+===================================== -->
+
+<div id="thankYouModal" class="hidden">
+
+    <div class="modalCard">
+
+        <h2>
+            ❤️ Thank You ❤️
+        </h2>
+
+        <p>
+
+            No matter what your answer is,
+
+            thank you for taking the time
+            to read this.
+
+        </p>
+
+        <p>
+
+            You genuinely mean a lot to me,
+            and I appreciate your honesty.
+
+        </p>
+
+        <button id="closeModal">
+            Close
+        </button>
+
+    </div>
+
+</div>
 
 
+
+</div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
