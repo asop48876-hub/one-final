@@ -1,1 +1,998 @@
 
+/* =====================================================
+   GOOGLE FONT & RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    background:#080B17;
+
+    color:#ffffff;
+
+    position:relative;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #090b18,
+        #10172d,
+        #1b1637,
+        #251742
+    );
+
+    z-index:-5;
+
+}
+
+
+/* =====================================================
+   FLOATING BLURS
+===================================================== */
+
+.blur{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    animation:float 14s ease-in-out infinite;
+
+}
+
+.blur1{
+
+    width:340px;
+    height:340px;
+
+    background:#8f6dff;
+
+    top:-80px;
+    left:-100px;
+
+}
+
+.blur2{
+
+    width:280px;
+    height:280px;
+
+    background:#ff4e95;
+
+    bottom:-80px;
+    right:-60px;
+
+    animation-delay:3s;
+
+}
+
+.blur3{
+
+    width:250px;
+    height:250px;
+
+    background:#57b7ff;
+
+    top:40%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    animation-delay:5s;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:
+        translate(0px,0px);
+
+    }
+
+    50%{
+
+        transform:
+        translate(50px,-40px);
+
+    }
+
+    100%{
+
+        transform:
+        translate(0px,0px);
+
+    }
+
+}
+
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#080B17;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-heart{
+
+    font-size:55px;
+
+    color:#ff4e95;
+
+    animation:heartbeat 1.2s infinite;
+
+}
+
+.loader-content h2{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    font-weight:500;
+
+    color:#f2f2f2;
+
+}
+
+@keyframes heartbeat{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    25%{
+
+        transform:scale(1.15);
+
+    }
+
+    50%{
+
+        transform:scale(.95);
+
+    }
+
+    75%{
+
+        transform:scale(1.12);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   PROGRESS BAR
+===================================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:20px;
+
+    z-index:500;
+
+}
+
+#progress{
+
+    width:100%;
+
+    height:6px;
+
+    background:rgba(255,255,255,.12);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+#progress-fill{
+
+    width:20%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #7d6dff,
+        #ff4ea0
+    );
+
+    border-radius:20px;
+
+    transition:.8s ease;
+
+}
+
+
+/* =====================================================
+   MAIN BOOK
+===================================================== */
+
+#book{
+
+    width:500vw;
+
+    height:100vh;
+
+    display:flex;
+
+    transition:
+    transform .9s cubic-bezier(.77,0,.18,1);
+
+}
+
+
+/* =====================================================
+   PAGES
+===================================================== */
+
+.page{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+    flex-shrink:0;
+
+}/* =====================================================
+   GLASS CARD
+===================================================== */
+
+.glass{
+
+    width:min(760px,90%);
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    padding:60px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.4s ease;
+
+}
+
+
+/* Shine Effect */
+
+.glass::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-180%;
+
+    left:-45%;
+
+    width:40%;
+
+    height:400%;
+
+    background:
+
+    linear-gradient(
+
+        rgba(255,255,255,0),
+
+        rgba(255,255,255,.18),
+
+        rgba(255,255,255,0)
+
+    );
+
+    transform:rotate(25deg);
+
+    animation:shine 9s linear infinite;
+
+}
+
+@keyframes shine{
+
+    from{
+
+        left:-60%;
+
+    }
+
+    to{
+
+        left:160%;
+
+    }
+
+}
+
+
+/* =====================================================
+   CHAPTER
+===================================================== */
+
+.chapter{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#d8cfff;
+
+    font-size:.9rem;
+
+    letter-spacing:1px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+h1{
+
+    font-size:3.2rem;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+h2{
+
+    font-size:2.6rem;
+
+    margin-bottom:22px;
+
+}
+
+p{
+
+    color:#ececec;
+
+    font-size:1.1rem;
+
+    line-height:2;
+
+}
+
+
+/* =====================================================
+   LIST
+===================================================== */
+
+ul{
+
+    list-style:none;
+
+    margin-top:25px;
+
+}
+
+ul li{
+
+    padding:16px 0;
+
+    font-size:1.08rem;
+
+    border-bottom:1px solid rgba(255,255,255,.10);
+
+}
+
+ul li:last-child{
+
+    border:none;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:50px;
+
+    padding:16px 36px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #7d6dff,
+        #ff4ea0
+    );
+
+    transition:.35s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Button Shine */
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:45%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.5),
+
+        transparent
+
+    );
+
+    transform:skewX(-20deg);
+
+    transition:.7s;
+
+}
+
+button:hover::before{
+
+    left:170%;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 15px 35px rgba(125,109,255,.35);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:18px;
+
+}
+
+
+/* =====================================================
+   FINAL BUTTONS
+===================================================== */
+
+.choice-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:45px;
+
+}
+
+#yesBtn{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #36d17d,
+        #12a36b
+    );
+
+}
+
+#laterBtn{
+
+    background:rgba(255,255,255,.12);
+
+}
+
+
+/* =====================================================
+   FINAL CARD
+===================================================== */
+
+.final{
+
+    text-align:center;
+
+}
+
+.final h2{
+
+    font-size:3rem;
+
+}
+
+.final p{
+
+    margin-top:20px;
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.glass:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+        0 35px 70px rgba(0,0,0,.45),
+
+        0 0 40px rgba(125,109,255,.15);
+
+}/* =====================================================
+   PAGE ANIMATIONS
+===================================================== */
+
+.page{
+
+    opacity:0;
+
+    transform:scale(.96);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.page.active{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+/* =====================================================
+   TEXT ANIMATION
+===================================================== */
+
+.page.active .glass>*{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+.page.active .glass>*:nth-child(1){animation-delay:.10s;}
+.page.active .glass>*:nth-child(2){animation-delay:.25s;}
+.page.active .glass>*:nth-child(3){animation-delay:.40s;}
+.page.active .glass>*:nth-child(4){animation-delay:.55s;}
+.page.active .glass>*:nth-child(5){animation-delay:.70s;}
+.page.active .glass>*:nth-child(6){animation-delay:.85s;}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.page::before{
+
+    content:"❤";
+
+    position:absolute;
+
+    top:12%;
+
+    right:10%;
+
+    font-size:26px;
+
+    color:rgba(255,255,255,.15);
+
+    animation:heartFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes heartFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:.3;
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+        opacity:.3;
+
+    }
+
+}
+
+
+/* =====================================================
+   BUTTON FOCUS
+===================================================== */
+
+button:focus{
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 4px rgba(125,109,255,.25);
+
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection{
+
+    background:#7d6dff;
+
+    color:#fff;
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:900px){
+
+.glass{
+
+padding:40px;
+
+width:92%;
+
+}
+
+h1{
+
+font-size:2.5rem;
+
+}
+
+h2{
+
+font-size:2rem;
+
+}
+
+p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+}
+
+.navigation{
+
+flex-direction:column;
+
+}
+
+.choice-buttons{
+
+flex-direction:column;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+
+@media (max-width:600px){
+
+.page{
+
+padding:20px;
+
+}
+
+.glass{
+
+padding:28px;
+
+border-radius:22px;
+
+}
+
+h1{
+
+font-size:2rem;
+
+}
+
+h2{
+
+font-size:1.6rem;
+
+}
+
+.chapter{
+
+font-size:.8rem;
+
+}
+
+.loader-content h2{
+
+font-size:18px;
+
+}
+
+}
+
+
+/* =====================================================
+   SMOOTH GLOW
+===================================================== */
+
+@keyframes pulseGlow{
+
+0%{
+
+box-shadow:
+0 0 0 rgba(125,109,255,0);
+
+}
+
+50%{
+
+box-shadow:
+0 0 35px rgba(125,109,255,.18);
+
+}
+
+100%{
+
+box-shadow:
+0 0 0 rgba(125,109,255,0);
+
+}
+
+}
+
+.glass{
+
+animation:pulseGlow 6s infinite ease-in-out;
+
+}
+
+
+/* =====================================================
+   PROGRESS BAR SHINE
+===================================================== */
+
+#progress-fill{
+
+background-size:200% 100%;
+
+animation:progressShine 4s linear infinite;
+
+}
+
+@keyframes progressShine{
+
+0%{
+
+background-position:0%;
+
+}
+
+100%{
+
+background-position:200%;
+
+}
+
+}
+
+
+/* =====================================================
+   END OF FILE
+===================================================== */
