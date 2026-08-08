@@ -1,14 +1,4 @@
-/* =========================================================
-   A LITTLE SOMETHING FOR YOU
-   script.js
-   Single clean JavaScript file
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* -----------------------------------------------------
-       GET ELEMENTS
-    ----------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", function () {
 
     const slider = document.getElementById("slider");
     const pages = document.querySelectorAll(".page");
@@ -18,100 +8,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const thinkButton = document.getElementById("thinkButton");
     const response = document.getElementById("response");
 
-
-    /* -----------------------------------------------------
-       BASIC CHECK
-    ----------------------------------------------------- */
+    let currentPage = 0;
 
     if (!slider || pages.length === 0) {
-        console.error(
-            "Proposal website: required page elements are missing."
-        );
         return;
     }
 
+    function showPage(index) {
 
-    /* -----------------------------------------------------
-       PAGE STATE
-    ----------------------------------------------------- */
-
-    let currentPage = 0;
-    let isMoving = false;
-
-    const transitionTime = 850;
-
-
-    /* -----------------------------------------------------
-       MOVE TO PAGE
-    ----------------------------------------------------- */
-
-    function moveToPage(pageNumber) {
-
-        if (isMoving) {
+        if (index < 0 || index >= pages.length) {
             return;
         }
 
-        if (
-            pageNumber < 0 ||
-            pageNumber >= pages.length
-        ) {
-            return;
-        }
-
-        if (pageNumber === currentPage) {
-            return;
-        }
-
-        isMoving = true;
+        currentPage = index;
 
         slider.style.transform =
-            `translateX(-${pageNumber * 100}%)`;
-
-        currentPage = pageNumber;
-
-        window.setTimeout(() => {
-            isMoving = false;
-        }, transitionTime);
+            "translateX(-" + (index * 100) + "%)";
     }
 
+    nextButtons.forEach(function (button) {
 
-    /* -----------------------------------------------------
-       NEXT PAGE
-    ----------------------------------------------------- */
+        button.addEventListener("click", function () {
 
-    function nextPage() {
+            if (currentPage < pages.length - 1) {
+                showPage(currentPage + 1);
+            }
 
-        if (
-            currentPage < pages.length - 1
-        ) {
-            moveToPage(currentPage + 1);
-        }
-    }
-
-
-    /* -----------------------------------------------------
-       NEXT BUTTONS
-    ----------------------------------------------------- */
-
-    nextButtons.forEach((button) => {
-
-        button.addEventListener("click", nextPage);
+        });
 
     });
 
 
-    /* -----------------------------------------------------
-       FINAL "YES" BUTTON
-    ----------------------------------------------------- */
+    if (yesButton) {
 
-    if (yesButton && response) {
+        yesButton.addEventListener("click", function () {
 
-        yesButton.addEventListener("click", () => {
+            if (response) {
+                response.textContent =
+                    "You just made me smile. ♡";
 
-            response.textContent =
-                "You just made me smile. ♡";
-
-            response.classList.add("show");
+                response.classList.add("show");
+            }
 
             yesButton.disabled = true;
 
@@ -124,20 +61,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* -----------------------------------------------------
-       FINAL "LET ME THINK" BUTTON
-    ----------------------------------------------------- */
+    if (thinkButton) {
 
-    if (thinkButton && response) {
+        thinkButton.addEventListener("click", function () {
 
-        thinkButton.addEventListener("click", () => {
+            if (response) {
+                response.textContent =
+                    "Take all the time you need. ♡";
 
-            response.textContent =
-                "Take all the time you need. " +
-                "Whatever you decide, thank you " +
-                "for reading this. ♡";
-
-            response.classList.add("show");
+                response.classList.add("show");
+            }
 
             thinkButton.disabled = true;
 
@@ -150,56 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* -----------------------------------------------------
-       SIMPLE LEFT-SWIPE SUPPORT
-       Swipe right-to-left to go forward.
-    ----------------------------------------------------- */
-
-    let touchStartX = 0;
-
-    document.addEventListener(
-        "touchstart",
-        (event) => {
-
-            if (event.changedTouches.length === 0) {
-                return;
-            }
-
-            touchStartX =
-                event.changedTouches[0].screenX;
-
-        },
-        { passive: true }
-    );
-
-
-    document.addEventListener(
-        "touchend",
-        (event) => {
-
-            if (event.changedTouches.length === 0) {
-                return;
-            }
-
-            const touchEndX =
-                event.changedTouches[0].screenX;
-
-            const swipeDistance =
-                touchEndX - touchStartX;
-
-            if (swipeDistance < -60) {
-                nextPage();
-            }
-
-        },
-        { passive: true }
-    );
-
-
-    /* -----------------------------------------------------
-       INITIAL POSITION
-    ----------------------------------------------------- */
-
-    slider.style.transform = "translateX(0%)";
+    showPage(0);
 
 });
