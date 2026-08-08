@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <style>
+        /* IMPORTING GOOGLE FONTS */
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Nunito:wght@400;600&display=swap');
 
+        /* BASE STYLING & SMOOTH SCROLLING */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+            background-color: #fdf5f6; /* Soft romantic pink background */
+            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* This makes the jumping between pages fluid */
+        }
+
+        /* EACH PAGE TAKES UP THE FULL SCREEN */
+        .page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        /* TYPOGRAPHY */
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            color: #d6336c; /* Deep pink color */
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* BOUNCING SCROLL INDICATOR */
+        .scroll-indicator {
+            margin-top: 3rem;
+            font-size: 1.1rem;
+            color: #a61e4d;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
+        /* BUTTON LAYOUT FOR THE FINAL PAGE */
+        .buttons-container {
+            margin-top: 2rem;
+            position: relative;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        button {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #yesBtn {
+            background-color: #d6336c;
+            color: white;
+            z-index: 2;
+        }
+
+        #yesBtn:hover {
+            background-color: #a61e4d;
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background-color: #ffffff;
+            color: #495057;
+            position: absolute; /* Allows it to move freely */
+            left: 55%; /* Starting position */
+            z-index: 1;
+        }
+
+        /* HIDDEN SUCCESS MESSAGE */
+        #success-message {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: The Hook -->
+    <div class="page" id="page1">
+        <h1>Hey there...</h1>
+        <p>I made this little page because there is something important I've been meaning to tell you.</p>
+        <div class="scroll-indicator">Scroll down ↓</div>
+    </div>
+
+    <!-- PAGE 2: The Compliment -->
+    <div class="page" id="page2">
+        <h1>You are pretty amazing</h1>
+        <p>Every time we talk, you manage to make my day infinitely better. You have this incredible energy that I just can't get enough of.</p>
+        <div class="scroll-indicator">Keep going ↓</div>
+    </div>
+
+    <!-- PAGE 3: The Build-up -->
+    <div class="page" id="page3">
+        <h1>And to be honest...</h1>
+        <p>I've completely fallen for you. Your smile, your laugh, and the way my heart skips a beat when I see your name pop up on my phone.</p>
+        <div class="scroll-indicator">Almost there ↓</div>
+    </div>
+
+    <!-- PAGE 4: The Question -->
+    <div class="page" id="page4">
+        
+        <!-- This div hides when they click YES -->
+        <div id="ask-section">
+            <h1>Will you go out with me?</h1>
+            <div class="buttons-container">
+                <button id="yesBtn">Yes!</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div>
+
+        <!-- This div shows when they click YES -->
+        <div id="success-message">
+            <h1>Yay! 🎉</h1>
+            <p>You just made me the happiest person! Take a screenshot of this and send it to me so we can plan our date! ❤️</p>
+        </div>
+
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const askSection = document.getElementById('ask-section');
+        const successMessage = document.getElementById('success-message');
+
+        // Function to make the "No" button run away
+        function runaway() {
+            // Get the window boundaries so it doesn't run off screen
+            const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+            const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+
+            // Generate random X and Y coordinates
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            // Apply new position
+            noBtn.style.position = 'fixed'; // Changes to fixed so it can move anywhere on screen
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        // Trigger the runaway function on hover (desktop) and touch (mobile)
+        noBtn.addEventListener('mouseover', runaway);
+        noBtn.addEventListener('touchstart', runaway);
+
+        // Function for when they click Yes
+        yesBtn.addEventListener('click', () => {
+            askSection.style.display = 'none';
+            successMessage.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
