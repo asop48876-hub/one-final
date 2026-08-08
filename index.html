@@ -1,219 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="A little something made with care.">
-
     <title>A Little Something For You</title>
 
-    <!-- CSS will be connected in the next stage -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-    <!-- =========================================
-         MAIN PROPOSAL EXPERIENCE
-    ========================================== -->
 
-    <main id="proposal">
+<div class="slider" id="slider">
 
-        <!-- =====================================
-             PAGE 1 — WELCOME
-        ====================================== -->
 
-        <section class="page page-1" id="page1">
+    <!-- PAGE 1 -->
 
-            <div class="page-content">
+    <section class="page">
 
-                <p class="small-text">
-                    Hey...
-                </p>
+        <div class="content">
 
-                <h1>
-                    I made something<br>
-                    just for you.
-                </h1>
+            <p class="small">
+                Hey...
+            </p>
 
-                <p class="intro-text">
-                    It's only a few pages,
-                    but there's something
-                    I wanted to say.
-                </p>
 
-                <button class="next-btn"
-                        data-next="page2"
-                        type="button">
-                    Begin
-                    <span>→</span>
+            <h1>
+                I made something
+                <br>
+                just for you.
+            </h1>
+
+
+            <p>
+                A small digital letter,
+                made with a lot of thought.
+            </p>
+
+
+            <button class="next-btn">
+                Begin →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PAGE 2 -->
+
+    <section class="page">
+
+        <div class="content">
+
+            <p class="small">
+                Something I wanted to say
+            </p>
+
+
+            <h2>
+                Why I made this
+            </h2>
+
+
+            <p>
+                Some feelings are difficult
+                to explain in normal words.
+            </p>
+
+
+            <p>
+                So I thought of creating
+                something special instead.
+            </p>
+
+
+            <button class="next-btn">
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PAGE 3 -->
+
+    <section class="page">
+
+        <div class="content">
+
+
+            <div class="heart">
+                ♡
+            </div>
+
+
+            <h2>
+                Something about you
+            </h2>
+
+
+            <p>
+                Somewhere along this journey,
+                you became someone important
+                to me.
+            </p>
+
+
+            <p>
+                And I wanted you to know that.
+            </p>
+
+
+            <button class="next-btn">
+                One last thing →
+            </button>
+
+
+        </div>
+
+    </section>    <!-- PAGE 4 — FINAL QUESTION -->
+
+    <section class="page">
+
+        <div class="content final-content">
+
+            <p class="small">
+                And finally...
+            </p>
+
+
+            <div class="final-symbol">
+                ✦
+            </div>
+
+
+            <h2>
+                Can we be together?
+            </h2>
+
+
+            <p>
+                Not just for a moment,
+                but for the beautiful journey
+                that may come after this.
+            </p>
+
+
+            <p class="soft-text">
+                No pressure. Just an honest question
+                from someone who wanted to ask.
+            </p>
+
+
+            <div class="answers">
+
+                <button
+                    class="answer yes"
+                    id="yesButton"
+                    type="button">
+
+                    Yes ♡
+
+                </button>
+
+
+                <button
+                    class="answer think"
+                    id="thinkButton"
+                    type="button">
+
+                    Let me think
+
                 </button>
 
             </div>
 
-        </section>
 
-        <!-- More pages will be added
-             in Part 2, Part 3 and Part 4 -->
+            <p
+                class="response"
+                id="response"
+                aria-live="polite">
+            </p>
 
-    </main>
+
+        </div>
+
+    </section>
 
 
-    <!-- JavaScript will be connected later -->
+</div>
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
 
 </body>
 
-</html>        <!-- =====================================
-             PAGE 2 — THE REASON
-        ====================================== -->
-
-        <section class="page page-2" id="page2">
-
-            <div class="page-content">
-
-                <p class="small-text">
-                    Maybe you're wondering...
-                </p>
-
-                <h2>
-                    Why did I make this?
-                </h2>
-
-                <div class="message-card">
-
-                    <p>
-                        There are some things that are
-                        easier to write than to say.
-                    </p>
-
-                    <p>
-                        And sometimes, a few honest
-                        words can say much more than
-                        a long conversation.
-                    </p>
-
-                    <p>
-                        So I thought I'd make something
-                        a little different.
-                    </p>
-
-                </div>
-
-                <button class="next-btn"
-                        data-next="page3"
-                        type="button">
-                    Keep going
-                    <span>→</span>
-                </button>
-
-            </div>
-
-        </section>        <!-- =====================================
-             PAGE 3 — SOMETHING I WANT TO SAY
-        ====================================== -->
-
-        <section class="page page-3" id="page3">
-
-            <div class="page-content">
-
-                <p class="small-text">
-                    And then there's this...
-                </p>
-
-                <h2>
-                    Something I wanted<br>
-                    you to know.
-                </h2>
-
-                <div class="heart-symbol" aria-hidden="true">
-                    ♡
-                </div>
-
-                <p class="personal-message">
-                    Somewhere along the way,
-                    you became someone who
-                    means a little more to me
-                    than I can easily explain.
-                </p>
-
-                <p class="personal-message secondary">
-                    I don't know exactly where
-                    this journey will take us...
-                    but I know I'd like to find out.
-                </p>
-
-                <button class="next-btn"
-                        data-next="page4"
-                        type="button">
-                    One last thing
-                    <span>→</span>
-                </button>
-
-            </div>
-
-        </section>        <!-- =====================================
-             PAGE 4 — THE QUESTION
-        ====================================== -->
-
-        <section class="page page-4" id="page4">
-
-            <div class="page-content final-content">
-
-                <p class="small-text">
-                    So, after everything I've wanted to say...
-                </p>
-
-                <div class="final-symbol" aria-hidden="true">
-                    ✦
-                </div>
-
-                <h2 class="final-question">
-                    Can we be together?
-                </h2>
-
-                <p class="final-message">
-                    Not just for a moment,
-                    but for the beautiful journey
-                    that may come after this.
-                </p>
-
-                <p class="final-subtext">
-                    No pressure. Just an honest question
-                    from someone who really wanted
-                    to ask you.
-                </p>
-
-                <div class="final-buttons">
-
-                    <button class="answer-btn yes-btn"
-                            id="yesBtn"
-                            type="button">
-                        Yes ♡
-                    </button>
-
-                    <button class="answer-btn think-btn"
-                            id="thinkBtn"
-                            type="button">
-                        Let me think
-                    </button>
-
-                </div>
-
-                <p class="ending-note">
-                    Whatever your answer,
-                    thank you for reading this.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================
-             END OF PROPOSAL EXPERIENCE
-        ====================================== -->
+</html>
